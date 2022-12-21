@@ -1,0 +1,8 @@
+;; The Observer design pattern
+
+(def numbers (atom []))
+
+(defn adder [key ref old-state new-state]
+  (print "Current sum is " (reduce + new-state)))
+
+(add-watch numbers :adder adder)
