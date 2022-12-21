@@ -1,0 +1,7 @@
+;; Catch
+
+(rx/subscribe (->> (exceptional-obs)
+                   (rx/catch Exception e
+                     (rx/return 10))
+                   (rx/map inc))
+              (fn [v] (prn-to-repl "result is " v)))

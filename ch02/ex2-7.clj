@@ -1,0 +1,24 @@
+;; One more flatmap for the road
+
+(defn repeat-obs [n]
+  (rx/seq->o (repeat 2 n)))
+
+
+(-> (repeat-obs 5)
+    (rx/subscribe prn-to-repl))
+
+;; 5
+;; 5
+
+
+(rx/subscribe (->> (all-positive-integers)
+                   (rx/flatmap repeat-obs)
+                   (rx/take 6))
+              prn-to-repl)
+
+;; 0
+;; 0
+;; 1
+;; 1
+;; 2
+;; 2

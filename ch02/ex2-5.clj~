@@ -1,0 +1,7 @@
+;; Manipulating Observables
+
+(rx/subscribe (->> (Observable/interval 1 TimeUnit/MICROSECONDS)
+                   (rx/filter even?)
+                   (rx/take 5)
+                   (rx/reduce +))
+              prn-to-repl)
