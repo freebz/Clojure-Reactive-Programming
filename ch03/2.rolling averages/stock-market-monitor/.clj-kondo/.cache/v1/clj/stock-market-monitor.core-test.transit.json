@@ -1,0 +1,1 @@
+["^ ","~$a-test",["^ ","~:row",5,"~:col",1,"~:fixed-arities",["~#set",[0]],"~:name","^0","~:ns","~$stock-market-monitor.core-test","~:top-ns","^7"],"~:filename","/home/fx/work/Clojure Reactive Programming/ch03/2. rolling averages/stock-market-monitor/test/stock_market_monitor/core_test.clj"]
