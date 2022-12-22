@@ -1,0 +1,16 @@
+;; Error handling
+
+(defn get-data []
+  (throw (Exception. "Bad things happen!")))
+
+(defn process []
+  (let [result (chan)]
+    ;; do some processing...
+    (go (>! result (get-data)))
+    result))
+
+
+(go (let [result (<! (->> (process "data")
+                          (map> #(* % %))
+                          (map> #(prn %))))]
+      (prn "result is: " result)))

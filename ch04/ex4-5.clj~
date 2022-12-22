@@ -1,0 +1,9 @@
+;; Backpressure
+
+;; Fixed buffer
+
+(def result (chan (buffer 5)))
+(go-loop []
+  (<! (async/timeout 1000))
+  (when-let [x (<! result)]
+    (prn

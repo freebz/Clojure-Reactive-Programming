@@ -1,0 +1,9 @@
+;; Transducers
+
+(require '[clojure.core.async :refer [go chan map< filter< into >! <! go-loop close! pipe]])
+
+
+(->> (range 10)
+     (map inc)
+     (filter even?)
+     (prn "result is"))

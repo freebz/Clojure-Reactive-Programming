@@ -1,0 +1,10 @@
+;; Asynchronous programming and concurrency
+
+(defn do-something-important []
+  (let [f (future (do (prn "Calculating...")
+                      (Thread/sleep 10000)))]
+    (prn "Perhaps the future has done its job?")
+    (prn @f)
+    (prn "You will only see this in about 10 seconds...")))
+
+(do-something-important)
