@@ -1,0 +1,11 @@
+;; Implementing event streams
+
+(defn event-stream
+  "Creates and returns a new event stream. You can optionally provide an existing
+  core.async channel as the source for the new stream"
+  ([]
+   (event-stream (chan)))
+  ([ch]
+   (let [multiple  (mult ch)
+         completed (atom false)]
+     (EventStream. ch multiple completed))))
