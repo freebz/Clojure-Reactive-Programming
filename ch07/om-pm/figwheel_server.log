@@ -1,0 +1,19 @@
+Compiling build :dev to "resources/public/js/compiled/om_pm.js" from ["src"]...
+[31mFailed to compile build :dev from ["src"] in 3.367 seconds.[0m
+[36m----  Could not Analyze  src/om_pm/core.cljs  ----[0m
+
+  [1mInvalid :refer, var om-pm.util/get-trans-data! does not exist [0m
+
+[36m----  Analysis Error : Please see src/om_pm/core.cljs  ----[0m
+Compiling build :dev to "resources/public/js/compiled/om_pm.js" from ["src"]...
+[31mFailed to compile build :dev from ["src"] in 0.673 seconds.[0m
+[36m----  Could not Analyze  src/om_pm/core.cljs  ----[0m
+
+  [1mInvalid :refer, var om-pm.util/get-trans-data! does not exist [0m
+
+[36m----  Analysis Error : Please see src/om_pm/core.cljs  ----[0m
+Compiling build :dev to "resources/public/js/compiled/om_pm.js" from ["src"]...
+[32mSuccessfully compiled build :dev to "resources/public/js/compiled/om_pm.js" in 1.377 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/om_pm/core.js
