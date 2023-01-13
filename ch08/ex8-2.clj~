@@ -1,0 +1,8 @@
+;; Imminent - a composable futures library for Clojure
+
+(require 'imminent-playground.repl)
+
+
+;; Creating futures
+
+(def age (i/future 31))
