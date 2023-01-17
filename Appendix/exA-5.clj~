@@ -1,0 +1,5 @@
+;; Applicative Functors
+
+(defprotocol Applicative
+  (pure [av v])
+  (fapply [ag av]))

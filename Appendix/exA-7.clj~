@@ -1,0 +1,28 @@
+;; Monads
+
+(defprotocol Monad
+  (bind [mv g]))
+
+
+(extend-protocol fkp/Monad
+  Some
+  (bind [mv g]
+    (g (:v mv)))
+
+  None
+  (bind [_ _]
+    (None.)))
+
+
+
+(def opt-ctx (None.))
+
+o(fkc/bind (age-option "Jack Sparrow")
+          (fn [a]
+            (fkc/bind (age-option "Blackbeard")
+                      (fn [b]
+                        (fkc/bind (age-option "Hector Barbossa")
+                                  (fn [c]
+                                    (fkc/pure opt-ctx
+                                              (+ a b c))))))))
+;; #library_design.option.Some{:v 170.0}

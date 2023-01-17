@@ -1,0 +1,22 @@
+;; Finding the average of ages
+
+(defn avg [& xs]
+  (float (/ (apply + xs) (count xs))))
+
+(let [a (some-> (pirate-by-name "Jack Sparrow") age)
+      b (some-> (pirate-by-name "Blackbeard") age)
+      c (some-> (pirate-by-name "Hector Barbossa") age)]
+  (avg a b c)) ;; 56.666668
+
+
+(let [a (some-> (pirate-by-name "Jack Sparrow") age)
+      b (some-> (pirate-by-name "Davy Jones") age)
+      c (some-> (pirate-by-name "Hector Barbossa") age)]
+  (avg a b c)) ;; NullPointerException   clojure.lang.Numbers.ops (Numbers.java:1018)
+
+
+(let [a (some-> (pirate-by-name "Jack Sparrow") age)
+      b (some-> (pirate-by-name "Davy Jones") age)
+      c (some-> (pirate-by-name "Hector Barbossa") age)]
+  (when (and a b c)
+    (avg a b c)))
